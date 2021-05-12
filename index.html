@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--Hey! what are you doing in my HTML code!-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+    <style>
+        *{
+            --cyan:#04a0ae;
+        }
+        .dm{
+            background-color:black;
+            transition:0.5s;
+        }
+        body{
+            transition:0.5s;
+        }
+        h1{
+            color:var(--cyan);
+            font-size:72px;
+        }
+        h2{
+            color: orange;
+            font-size:36px;
+        }
+        a{
+            text-decoration: none;
+        }
+        h2#username{
+            background-color:rgb(48, 48, 48);
+            width:15vw;
+            padding:10px;
+            margin:0px;
+            height:30px;
+        }
+        #findmeon{
+            position:absolute;
+            background-color: rgb(83, 83, 83);
+            color:white;
+            height:75px;
+            padding:10px;
+            text-align: left;
+            width:16vw;
+            left:50%;
+            transform:translateX(-50%);
+        }
+        nav{
+            position:absolute;
+            top:0;
+            left:0;
+            padding:20px;
+            width:100%;
+        }
+        .dmm{
+            background-color:rgb(43, 43, 43) !important;
+            color:darkgray !important;
+        }
+        nav>span{
+            color: var(--cyan);
+            font-weight: bolder;
+            font-size:36px;
+        }
+        @keyframes expand{
+            from{height:40px;}
+            to{height:70px;}
+        }
+        @keyframes deexpand{
+            from{height:70px;}
+            to{height:40px;}
+        }
+        .navbarlink{
+            text-align:center;
+            left:0;
+            top:120px;
+            width:23.6vw;
+            padding-left:2%;
+            padding-top:20px;
+            position:absolute;
+            background-color:white;
+            height:40px;
+            animation:deexpand 0.5s;
+            border:1px solid black;
+            transition:0.5s;
+            text-decoration:none;
+            color:black;
+        }
+        .navbarlink:hover{
+            height:70px;
+            animation:expand 0.5s;
+            transition:0.5s;
+            background-color:#5c5c5c;
+            color:white;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <button style="position:absolute;right:0;top:0;z-index:10000;" onclick="document.body.classList.toggle('dm');document.querySelectorAll('.navbarlink').forEach(element=>element.classList.toggle('dmm'))">Toggle light or dark mode</button>
+    <nav>
+        <span>[Hi I'm Andrew]</span>
+        <a class="navbarlink" style="left:0;">link1</a>
+        <a class="navbarlink" style="left:25%;">link1</a>
+        <a class="navbarlink" style="left:50%;">link1</a>
+        <a class="navbarlink" style="left:75%;">link1</a>
+    </nav>
+    <main style="text-align:center;">
+        <header>
+            <h1 style="margin-top:35vh;">[Hi, I'm Andrew!]</h1>
+            <hr style="width:200px;">
+            <h2>Self learning software developer</h2>
+            <section>
+                <a href="https://artofproblemsolving.com/community/user/andrewc10" target="_blank">
+                    <img class="icon" onmouseover="findmeon('AoPS', '@AndrewC10')" src="https://artofproblemsolving.com/online-favicon.ico" alt="AoPS icon">
+                </a>
+                <a href="https://replit.com/@AndrewChen51/" target="_blank">
+                    <img class="icon" onmouseover="findmeon('Replit', '@AndrewChen51')" src="https://replit.com/public/images/favicon.ico" alt="replit icon" >
+                </a>
+                <a href="https://github.com/actiniumn404/" target="_blank">
+                    <img class="icon" onmouseover="findmeon('Github', '@actiniumn404')" src="https://github.githubassets.com/favicons/favicon.svg" alt="github icon">
+                </a>
+                <a href="https://discordapp.com/users/728297793646624819" target="_blank">
+                    <img class="icon" onmouseover="findmeon('Discord', '#728297793646624819')" src="https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png" alt="discord icon" height=32px>
+                </a>
+                <div id="findmeon">
+                    <span style="font-size:18px;">Find me on <span id="sitename" style="color:yellow;"></span>:</span>
+                    <h2 id="username" style="color:yellow;font-size:24px;"></h2>
+                </div>
+            </section>
+        </header>
+    </main>
+    <script>
+        var i = 0;
+        var iu = 0;
+        var txt = 'Lorem ipsum typing effect!'; /* The text */
+        var txt2 = 'dsafdsaf'
+        var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+        function clear(){
+            document.getElementById("username").innerHTML=""
+            document.getElementById("sitename").innerHTML = ""
+        }
+        function findmeon(software, id){
+            document.getElementById("username").innerHTML=""
+            document.getElementById("sitename").innerHTML = ""
+            i=0
+            iu=0;
+            txt=id
+            txt2=software
+            typeWriter()
+            typeWriter2()
+        }
+    
+
+        function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("username").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+        }
+        function typeWriter2() {
+        if (iu < txt2.length) {
+            document.getElementById("sitename").innerHTML += txt2.charAt(iu);
+            iu++;
+            setTimeout(typeWriter2, 100);
+        }
+        }
+    </script>
+</body>
+</html>
