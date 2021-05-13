@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> </title>
+    <title>The Website of Andrew Chen</title>
+    <link rel="icon" href="https://i.ibb.co/MkH9kqz/ac.png">
     <style>
         *{
             --cyan:#04a0ae;
@@ -73,8 +74,7 @@
             text-align:center;
             left:0;
             top:120px;
-            width:23.6vw;
-            padding-left:2%;
+            width:25%;
             padding-top:20px;
             position:absolute;
             background-color:white;
@@ -98,9 +98,9 @@
     </script>
 </head>
 <body>
-    <button style="position:absolute;right:0;top:0;z-index:10000;" onclick="document.body.classList.toggle('dm');document.querySelectorAll('.navbarlink').forEach(element=>element.classList.toggle('dmm'))">Toggle light or dark mode</button>
+    <button style="position:absolute;right:0;top:0;z-index:10000;" onclick="dmcookie();document.body.classList.toggle('dm');document.querySelectorAll('.navbarlink').forEach(element=>element.classList.toggle('dmm'))">Toggle light or dark mode</button>
     <nav>
-        <span>[Hi I'm Andrew]</span>
+        <span>{Hi I'm Andrew}</span>
         <a class="navbarlink" style="left:0;">link1</a>
         <a class="navbarlink" style="left:25%;">link1</a>
         <a class="navbarlink" style="left:50%;">link1</a>
@@ -108,7 +108,7 @@
     </nav>
     <main style="text-align:center;">
         <header>
-            <h1 style="margin-top:35vh;">[Hi, I'm Andrew!]</h1>
+            <h1 style="margin-top:35vh;">{Hi, I'm Andrew!}</h1>
             <hr style="width:200px;">
             <h2>Self learning software developer</h2>
             <section>
@@ -126,7 +126,7 @@
                 </a>
                 <div id="findmeon">
                     <span style="font-size:18px;">Find me on <span id="sitename" style="color:yellow;"></span>:</span>
-                    <h2 id="username" style="color:yellow;font-size:24px;"></h2>
+                    <h2 id="username" style="color:yellow;font-size:24px;overflow:auto;overflow-y: hidden;"></h2>
                 </div>
             </section>
         </header>
@@ -167,6 +167,33 @@
             iu++;
             setTimeout(typeWriter2, 100);
         }
+        }
+
+        function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+        }
+        if (getCookie("ldm") === "dark"){
+            document.body.classList.toggle('dm');
+            document.querySelectorAll('.navbarlink').forEach(element=>element.classList.toggle('dmm'))
+        }
+        function dmcookie(){
+            if (getCookie("ldm") == "dark"){
+                document.cookie = "ldm=light; expires=Mon, 30 Dec 2030 12:00:00 UTC; path=/";
+            }else{
+                document.cookie = "ldm=dark; expires=Mon, 30 Dec 2030 12:00:00 UTC; path=/";
+            }
         }
     </script>
 </body>
