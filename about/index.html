@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://raw.githubusercontent.com/actiniumn404/actiniumn404.github.io/main/favicon.png">
+    <title>About Andrew</title>
+    <style>
+        *{
+            --cyan:#04a0ae;
+        }
+        h1{
+            color:var(--cyan);
+            font-size:72px;
+            text-align:center;
+        }
+        nav>span>a {
+            text-decoration: none;
+            color: var(--cyan) !important;
+            font-weight: bolder;
+            font-size: 36px;
+        }
+    
+        @keyframes expand {
+            from {
+                height: 40px;
+            }
+            
+            to {
+                height: 70px;
+            }
+        }
+    
+        @keyframes deexpand {
+            from {
+                height: 70px;
+            }
+            
+            to {
+                height: 40px;
+            }
+        }
+        .dmm{
+            background-color:rgb(43, 43, 43) !important;
+            color:darkgray !important;
+        }
+        nav{
+            width:99vw;
+            height:120px;
+        }
+        .navbarlink {
+            text-align: center;
+            left: 0;
+            top: 60px;
+            width: 25%;
+            padding-top: 20px;
+            position: absolute;
+            background-color: white;
+            height: 40px;
+            animation: deexpand 0.5s;
+            border: 1px solid black;
+            transition: 0.5s;
+            text-decoration: none;
+            color: black;
+            z-index: 100000;
+        }
+    
+        .navbarlink:hover {
+            height: 70px;
+            animation: expand 0.5s;
+            transition: 0.5s;
+            background-color: #5c5c5c;
+            color: white;
+        }
+        html{
+            background-color: black;
+        }
+        p{
+            color:white;
+            font-size:20px;
+            width:50vw;
+            margin-left:25vw;
+        }
+        button{
+            border:2px var(--cyan) solid;
+            color: var(--cyan);
+            font-weight: bolder;
+            font-size:20px;
+            background-color: transparent;
+            padding:10px;
+            outline:none;
+        }
+        button:hover{
+            opacity: 0.8;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <nav>
+        <span><a href="/">{Hi I'm Andrew}</a></span>
+        <a class="navbarlink dmm" href="/about" style="left:0;">About</a>
+        <a class="navbarlink dmm" href="/portfolio" style="left:25%;">Portfolio</a>
+        <a class="navbarlink dmm" href="/contact" style="left:50%;">Contact</a>
+        <a class="navbarlink dmm" href="/other" style="left:75%;">Other</a>
+    </nav>
+    <main style="text-align:center;">
+        <h1>About Andrew</h1>
+        <img src="https://dummyimage.com/500x350/3b3b3b/ffffff.png&text=Insert+Bad+Photo+Here">
+        <p><span style="color:var(--cyan);">{Hi I'm Andrew!}</span> I'm a possibily overzealous programmer that likes to web develop. 
+            Programming Languages that I know include Python, HTML, CSS, and JavaScript. 
+            I hope to learn a new language soon, learning the web developing combo was really fun! If I am not in class, you can find me biking and coding.
+        </p>
+        <a href="/contact"><button>Drop me a line!</button></a>
+    </main>
+</body>
+</html>
