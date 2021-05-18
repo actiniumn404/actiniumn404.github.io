@@ -192,6 +192,12 @@
                 document.cookie = "ldm=dark; expires=Mon, 30 Dec 2030 12:00:00 UTC; path=/";
             }
         }
+        window.onload = function(){var iframe = document.getElementsByTagName('iframe')[0];
+        var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+        innerDoc.getElementsByTagName("a").forEach((element)=>{
+            element.target = "_blank";
+            element.onclick = "window.parent.location.replace(this.href)";
+        })}
     </script>
 </body>
 </html>
