@@ -44,17 +44,15 @@
             background-color:rgb(43, 43, 43) !important;
             color:darkgray !important;
         }
-        nav{
-            width:99vw;
-            height:120px;
-        }
         .navbarlink {
+            width:0;
+            flex-basis: 100%;
             text-align: center;
             left: 0;
             top: 60px;
-            width: 25%;
+            /*width: 24%;*/
             padding-top: 20px;
-            position: absolute;
+            /*position: absolute;*/
             background-color: white;
             height: 40px;
             animation: deexpand 0.5s;
@@ -71,6 +69,12 @@
             transition: 0.5s;
             background-color: #5c5c5c;
             color: white;
+        }
+        nav>div{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            height:120px;
         }
         html{
             background-color: black;
@@ -101,10 +105,12 @@
 <body>
     <nav>
         <span><a href="/">{Hi I'm Andrew}</a></span>
-        <a class="navbarlink dmm" href="/about" style="left:0;">About</a>
-        <a class="navbarlink dmm" href="/portfolio" style="left:25%;">Portfolio</a>
-        <a class="navbarlink dmm" href="/contact" style="left:50%;">Contact</a>
-        <a class="navbarlink dmm" href="/other" style="left:75%;">Other</a>
+        <div>
+            <a class="navbarlink dmm" href="/about" style="left:0;">About</a>
+            <a class="navbarlink dmm" href="/portfolio" style="left:25%;">Portfolio</a>
+            <a class="navbarlink dmm" href="/contact" style="left:50%;">Contact</a>
+            <a class="navbarlink dmm" href="/other" style="left:75%;">Other</a>
+        </div>
     </nav>
     <main style="text-align:center;">
         <h1>About Andrew</h1>
