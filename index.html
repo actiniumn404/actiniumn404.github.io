@@ -46,51 +46,67 @@
             left:50%;
             transform:translateX(-50%);
         }
-        nav{
-            position:absolute;
-            top:0;
-            left:0;
-            padding:20px;
-            width:100%;
+        nav>span>a {
+            text-decoration: none;
+            color: var(--cyan) !important;
+            font-weight: bolder;
+            font-size: 36px;
+        }
+    
+        @keyframes expand {
+            from {
+                height: 40px;
+            }
+            
+            to {
+                height: 70px;
+            }
+        }
+    
+        @keyframes deexpand {
+            from {
+                height: 70px;
+            }
+            
+            to {
+                height: 40px;
+            }
         }
         .dmm{
             background-color:rgb(43, 43, 43) !important;
             color:darkgray !important;
         }
-        nav>span{
-            color: var(--cyan);
-            font-weight: bolder;
-            font-size:36px;
+        .navbarlink {
+            width:0;
+            flex-basis: 100%;
+            text-align: center;
+            left: 0;
+            top: 60px;
+            /*width: 24%;*/
+            padding-top: 20px;
+            /*position: absolute;*/
+            background-color: white;
+            height: 40px;
+            animation: deexpand 0.5s;
+            border: 1px solid black;
+            transition: 0.5s;
+            text-decoration: none;
+            color: black;
+            z-index: 100000;
         }
-        @keyframes expand{
-            from{height:40px;}
-            to{height:70px;}
+    
+        .navbarlink:hover {
+            height: 70px;
+            animation: expand 0.5s;
+            transition: 0.5s;
+            background-color: #5c5c5c;
+            color: white;
         }
-        @keyframes deexpand{
-            from{height:70px;}
-            to{height:40px;}
-        }
-        .navbarlink{
-            text-align:center;
-            left:0;
-            top:120px;
-            width:25%;
-            padding-top:20px;
-            position:absolute;
-            background-color:white;
-            height:40px;
-            animation:deexpand 0.5s;
-            border:1px solid black;
-            transition:0.5s;
-            text-decoration:none;
-            color:black;
-        }
-        .navbarlink:hover{
-            height:70px;
-            animation:expand 0.5s;
-            transition:0.5s;
-            background-color:#5c5c5c;
-            color:white;
+        nav>div{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            height:120px;
         }
     </style>
     <script>
@@ -98,7 +114,15 @@
     </script>
 </head>
 <body>
-    <iframe src="/navbar" width="100%" style="position:absolue;border:none;overflow:hidden !important;" height="180px">You need to enable iframe to see the navbar</iframe>
+    <nav>
+        <span><a href="/">{Hi I'm Andrew}</a></span>
+        <div>
+            <a class="navbarlink dmm" href="/about" style="left:0;">About</a>
+            <a class="navbarlink dmm" href="/portfolio" style="left:25%;">Portfolio</a>
+            <a class="navbarlink dmm" href="/contact" style="left:50%;">Contact</a>
+            <a class="navbarlink dmm" href="/other" style="left:75%;">Other</a>
+        </div>
+    </nav>
     <button style="position:absolute;right:0;top:0;z-index:10000;" onclick="dmcookie();document.body.classList.toggle('dm');document.querySelectorAll('.navbarlink').forEach(element=>element.classList.toggle('dmm'))">Toggle light or dark mode</button>
     <main style="text-align:center;">
         <header>
@@ -192,12 +216,6 @@
                 document.cookie = "ldm=dark; expires=Mon, 30 Dec 2030 12:00:00 UTC; path=/";
             }
         }
-        window.onload = function(){var iframe = document.getElementsByTagName('iframe')[0];
-        var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-        innerDoc.getElementsByTagName("a").forEach((element)=>{
-            element.target = "_blank";
-            element.onclick = "window.parent.location.replace(this.href)";
-        })}
     </script>
 </body>
 </html>
