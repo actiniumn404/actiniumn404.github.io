@@ -128,17 +128,24 @@
         #missing>button, #windowback>button{
             width:25vw;
             height:40px;
-            background-color:var(--cyan);
-            color:white;
             border:none;
             font-size:18px;
         }
-        button:hover{
+        button{
             transform:scale(1.25);
             transition: 0.5s;
+            border:2px var(--cyan) solid;
+            color: var(--cyan);
+            font-weight: bolder;
+            font-size:20px;
+            background-color: transparent;
+            padding:10px;
+            outline:none;
+        }
+        button:hover{
+            opacity: 0.8;
         }
         button{
-            transition: 0.5s;
             animation:fade 2s infinite;
         }
         @keyframes fade{
