@@ -1,103 +1,276 @@
 <!DOCTYPE html>
-<!--Hey! what are you doing in my HTML code!-->
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Website of Andrew Chen</title>
-    <link rel="stylesheet" href="/site.css">
-    <script src="/site.js" defer></script>
-    <link rel="icon" href="https://raw.githubusercontent.com/actiniumn404/actiniumn404.github.io/main/favicon.png">
-    <style>
-        h2#username{
-            background-color:rgb(48, 48, 48);
-            width:15vw;
-            padding:10px;
-            margin:0px;
-            height:30px;
-        }
-        #findmeon{
-            position:absolute;
-            background-color: rgb(83, 83, 83);
-            color:white;
-            height:75px;
-            padding:10px;
-            text-align: left;
-            width:16vw;
-            left:50%;
-            transform:translateX(-50%);
-        }
-    </style>
-    <script>
-
-    </script>
-</head>
-<body>
-    <main style="text-align:center;">
-        <header>
-            <h1 style="margin-top:17vh;">{Hi, I'm Andrew!}</h1>
-            <hr style="width:200px;">
-            <h2>Self learning software developer</h2>
-            <section>
-                <a href="https://artofproblemsolving.com/community/user/andrewc10" target="_blank">
-                    <img class="icon" onmouseover="findmeon('AoPS', '@AndrewC10')" src="https://artofproblemsolving.com/online-favicon.ico" alt="AoPS icon">
-                </a>
-                <a href="https://replit.com/@AndrewChen51/" target="_blank">
-                    <img class="icon" onmouseover="findmeon('Replit', '@AndrewChen51')" src="https://replit.com/public/images/favicon.ico" alt="replit icon" >
-                </a>
-                <a href="https://github.com/actiniumn404/" target="_blank">
-                    <img class="icon" onmouseover="findmeon('Github', '@actiniumn404')" src="https://github.githubassets.com/favicons/favicon.svg" alt="github icon">
-                </a>
-                <a href="https://discordapp.com/users/728297793646624819" target="_blank">
-                    <img class="icon" onmouseover="findmeon('Discord', '#728297793646624819')" src="https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png" alt="discord icon" height=32px>
-                </a>
-                <a href="https://stackoverflow.com/users/15947148/actinium404" target="_blank">
-                    <img class="icon" onmouseover="findmeon('Stack Overflow', '@actinium404')" src="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico?v=ec617d715196" alt="Stack Overflow icon">
-                </a>
-                <div id="findmeon">
-                    <span style="font-size:18px;">Find me on <span id="sitename" style="color:yellow;"></span>:</span>
-                    <h2 id="username" style="color:yellow;font-size:24px;overflow:auto;overflow-y: hidden;"></h2>
-                </div>
-            </section>
-        </header>
-    </main>
-    <script>
-        var i = 0;
-        var iu = 0;
-        var txt = 'Lorem ipsum typing effect!'; /* The text */
-        var txt2 = 'dsafdsaf'
-        var speed = 50; /* The speed/duration of the effect in milliseconds */
-
-        function clear(){
-            document.getElementById("username").innerHTML=""
-            document.getElementById("sitename").innerHTML = ""
-        }
-        function findmeon(software, id){
-            document.getElementById("username").innerHTML=""
-            document.getElementById("sitename").innerHTML = ""
-            i=0
-            iu=0;
-            txt=id
-            txt2=software
-            typeWriter()
-            typeWriter2()
-        }
-    
-
-        function typeWriter() {
-            if (i < txt.length) {
-                document.getElementById("username").innerHTML += txt.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>The Website of Andrew Chen</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+				height: 100vh;
+				background-color: rgb(30, 30, 30);
+				color: #ccc;
+				font-family: "Open Sans", sans-serif;
+			}
+			@font-face {
+				font-family: "codicon";
+				src: url("https://microsoft.github.io/vscode-codicons/dist/codicon.ttf?01396d1843cb318e1089a78e8dee6985")
+					format("truetype");
+			}
+			@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+			@font-face {
+				src: url("https://vscodeweb.azureedge.net/stable/7f6ab5485bbc008386c4386d08766667e155244e/extensions/theme-seti/icons/seti.woff")
+					format("woff");
+				font-family: "seti";
+				font-weight: normal;
+				font-style: normal;
+				font-display: block;
+			}
+			.codicon,
+			.langicon {
+				font-family: codicon;
+				display: block;
+				text-decoration: none;
+				text-rendering: auto;
+				text-align: center;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				user-select: none;
+				-webkit-user-select: none;
+				-ms-user-select: none;
+			}
+			.langicon {
+				font-family: "seti";
+				padding-right: 6px;
+				font-weight: bold;
+				width: fit-content;
+				width: -moz-fit-content;
+				display: inline-block;
+			}
+			.codicon::before {
+				content: var(--id);
+			}
+			nav aside {
+				background-color: rgb(51, 51, 51);
+				width: 48px;
+				height: 100%;
+				float: left;
+			}
+			nav {
+				height: calc(100% - 5px);
+				width: fit-content;
+				width: -moz-fit-content;
+				float: left;
+			}
+			.navbarbutton {
+				width: 48px;
+				height: 48px;
+				display: flex;
+				font-size: 24px;
+				align-items: center;
+				justify-content: center;
+				background-color: transparent;
+				cursor: pointer;
+				border: 0;
+				color: rgba(255, 255, 255, 0.4);
+			}
+			.navbarbutton:hover {
+				color: rgb(255, 255, 255);
+			}
+			.navbarbutton.active {
+				color: rgb(255, 255, 255);
+			}
+			nav div {
+				background-color: rgb(37, 37, 38);
+				width: 300px;
+				height: 100%;
+				float: right;
+			}
+			.navtitle {
+				color: rgb(187, 187, 187);
+				font-size: 13px;
+				line-height: 35px;
+				padding-left: 24px;
+				text-transform: uppercase;
+			}
+			.file {
+				padding-left: 24px;
+				height: 22px;
+				font-size: 13px;
+				line-height: 22px;
+				cursor: pointer;
+			}
+			.file:hover {
+				background-color: #2a2d2e;
+			}
+			.file.active {
+				background-color: #37373d;
+			}
+			#main {
+				width: calc(100% - 348px);
+				float: right;
+                opacity: 0;
+                transition: 1s ease;
+			}
+			#runlog {
+				background-color: #37373d;
+				padding: 10px;
+				width: 100px;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+			}
+			#runcode {
+				--id: "\eb2c";
+				font-weight: bold;
+				color: rgb(17, 187, 17);
+				width: fit-content;
+				width: -moz-fit-content;
+                cursor: pointer;
+			}
+            #runcode:hover{
+                filter: brightness(0.8);
             }
-        }
-        function typeWriter2() {
-            if (iu < txt2.length) {
-                document.getElementById("sitename").innerHTML += txt2.charAt(iu);
-                iu++;
-                setTimeout(typeWriter2, 100);
+
+            @keyframes cursor {
+                from{
+                    top: 20vh;
+                    left:50vw;
+                }
+                100%{
+                    top: 10px;
+                    left:calc(100vw - 95px);
+                }
             }
-        }
-    </script>
-</body>
+
+            #cursor{
+                position: absolute;
+                top:10px;
+                left:calc(100vw - 95px);
+                animation: cursor 2s ease;
+            }
+
+
+			/* TEST START */
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<nav>
+			<aside>
+				<button class="navbarbutton">
+					<span class="codicon" style="--id: '\ea84'"></span>
+				</button>
+				<button class="navbarbutton active">
+					<span class="codicon" style="--id: '\eaf0'"></span>
+				</button>
+			</aside>
+			<div>
+				<div id="navexplorer">
+					<span class="navtitle">File System</span>
+					<div class="file active">
+						<span class="langicon" style="color: #e37933; --id: '\E046'"
+							>&lt;&nbsp;&gt;</span
+						>
+						Homepage.html
+					</div>
+					<div class="file">
+						<span class="langicon" style="color: #e37933; --id: '\E046'"
+							>&lt;&nbsp;&gt;</span
+						>
+						About.html
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div id="runlog">
+			<span class="codicon" id="runcode"></span>
+		</div>
+        <img src="https://lmddgtfy.net/img/cursor-default.png" id="cursor">
+		<main id="main">
+			<!--test start-->
+
+			<!--test end-->
+		</main>
+
+		<script>
+			dict = {};
+			function typetitle(
+				emt,
+				typertext,
+				aftertext,
+				id,
+				total,
+				speed = 50,
+				charPos = 0
+			) {
+				if (!emt.attr("style")) {
+					emt.attr("style", "");
+				}
+				emt.html(" ");
+				emt.attr("style", emt.attr("style") + "font-size:18px;color:#CCC;");
+				i = setInterval(function () {
+					console.log(i);
+					dict[typertext] = i;
+					if (charPos >= typertext.length) {
+						if (aftertext === null) {
+							aftertext = typertext;
+						}
+						setTimeout(() => {
+							emt.html(aftertext);
+							emt.attr(
+								"style",
+								emt.attr("style").substring(0, emt.attr("style").length - 26)
+							);
+						}, 500);
+						clearInterval(id);
+						if (id === 0) {
+							clearInterval(1);
+						}
+						//clearInterval(dict[typertext])
+						return 0;
+					}
+					emt.append(typertext[charPos]);
+					charPos++;
+				}, speed);
+			}
+
+			async function init() {
+                $("#main").css("opacity", "1")
+				counter = 4;
+				for (let x = 0; x < $("#main > section *").length; x++) {
+					el = $($("#main > section *")[x]);
+					if (el.data("code") !== undefined) {
+						counter++;
+						typetitle(
+							el,
+							el.data("code"),
+							el.html(),
+							counter,
+							$("#main > section > *").length
+						);
+					}
+				}
+			}
+
+            setTimeout(() => {
+                $("#cursor").attr("src", "https://lmddgtfy.net/img/cursor-pointer.png")
+                setTimeout(() => {
+                    $("#cursor").css("top", "13px")
+                    $("#cursor").css("left", "calc(100vw - 92px)")
+                    setTimeout(() => {
+                        $("#cursor").css("top", "10px")
+                        $("#cursor").css("left", "calc(100vw - 95px)")
+                        setTimeout(() => {
+                            $("#cursor").remove()
+                        }, 200);
+                        init()
+                    }, 100);
+                }, 500);
+            }, 1500);
+		</script>
+	</body>
 </html>
