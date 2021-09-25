@@ -1,0 +1,3 @@
+<h1>Hi! Welcome to my website!</h1>
+<hr>
+This website bears no affiliation with <a href="https://microsoft.com/">Microsoft Coorperation</a>, whose software, <a href="https://visualstudio.microsoft.com/">Visual Studio Code (VSCode)</a>, inspired the design on this website. No copyright infringement, nor monotizing are intended on this website.

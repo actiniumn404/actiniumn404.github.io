@@ -1,3 +1,86 @@
+dict = {};
+function typetitle(
+    emt,
+    typertext,
+    aftertext,
+    id,
+    total,
+    speed = 50,
+    charPos = 0
+) {
+    console.log(id)
+    if (!emt.attr("style")) {
+        emt.attr("style", "");
+    }
+    emt.html(" ");
+    emt.attr("style", emt.attr("style") + "font-size:18px;color:#CCC;");
+    i = setInterval(function () {
+        dict[typertext] = i;
+        if (charPos >= typertext.length) {
+            if (aftertext === null) {
+                aftertext = typertext;
+            }
+            //setTimeout(() => {
+                emt.html(aftertext);
+                emt.attr(
+                    "style",
+                    emt.attr("style").substring(0, emt.attr("style").length - 26)
+                );
+            //}, 500);
+            clearInterval(id);
+            if (id === 0) {
+                clearInterval(1);
+            }
+            //clearInterval(dict[typertext])
+            return 0;
+        }
+        emt.append(typertext[charPos]);
+        charPos++;
+    }, speed);
+}
+counter = 4;
+async function init() {
+    $("#main").css("opacity", "1")
+    for (let x = 0; x < $("#main > section *").length; x++) {
+        el = $($("#main > section *")[x]);
+        if (el.data("code") !== undefined) {
+            counter += 1;
+            console.log(counter)
+            typetitle(
+                el,
+                el.data("code"),
+                el.html(),
+                counter,
+                $("#main > section > *").length
+            );
+        }
+    }
+}
+
+setTimeout(() => {
+    $("#cursor").attr("src", "https://lmddgtfy.net/img/cursor-pointer.png")
+    setTimeout(() => {
+        $("#cursor").css("top", "13px")
+        $("#cursor").css("left", "calc(100vw - 92px)")
+        setTimeout(() => {
+            $("#cursor").css("top", "10px")
+            $("#cursor").css("left", "calc(100vw - 95px)")
+            setTimeout(() => {
+                $("#cursor").remove()
+            }, 200);
+            init()
+        }, 100);
+    }, 500);
+}, 1500);
+
+async function o(filename){
+    data = await fetch(filename)
+    data = data.text()
+    //$("main").html(mainpage[0])
+    //$("main").append(`<style>${mainpage[1]}</style>`)
+    console.log(data)
+}
+
 const mainpage = [
     `			<section style="text-align: center">
     <h1

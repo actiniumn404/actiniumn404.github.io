@@ -60,7 +60,7 @@
 				float: left;
 			}
 			nav {
-				height: calc(100% - 5px);
+				height: calc(100% - 27px);
 				width: fit-content;
 				width: -moz-fit-content;
 				float: left;
@@ -153,8 +153,29 @@
                 animation: cursor 2s ease;
             }
 
-
-			/* TEST START */
+ 			footer {
+				height: 27px;
+				width: 100%;
+				background-color: rgb(0, 122, 204);
+				position: absolute;
+				bottom: 0px;
+				padding:5px;
+				font-size:14px;
+				color:white;
+				line-height: 17px;
+				padding-left:15px;
+				text-align: center;
+			}
+			@keyframes bigtext {
+				0%{font-size: inherit;color:rgb(255, 154, 196);}
+				50%{font-size: 17px;color:rgb(255, 255, 142);}
+				100%{font-size: inherit;color:rgb(255, 154, 196);}
+			}
+			#crightmore{
+				animation:ease 1s bigtext infinite;
+				user-select: none;
+				cursor: pointer;
+			}
 		</style>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
@@ -187,90 +208,15 @@
 			</div>
 		</nav>
 		<div id="runlog">
-			<span class="codicon" id="runcode"></span>
+			<span class="codicon" id="runcode" onclick="init()"></span>
 		</div>
         <img src="https://lmddgtfy.net/img/cursor-default.png" id="cursor">
 		<main id="main">
-			<!--test start-->
-
-			<!--test end-->
+			Nothing here
 		</main>
 
-		<script>
-			dict = {};
-			function typetitle(
-				emt,
-				typertext,
-				aftertext,
-				id,
-				total,
-				speed = 50,
-				charPos = 0
-			) {
-				if (!emt.attr("style")) {
-					emt.attr("style", "");
-				}
-				emt.html(" ");
-				emt.attr("style", emt.attr("style") + "font-size:18px;color:#CCC;");
-				i = setInterval(function () {
-					console.log(i);
-					dict[typertext] = i;
-					if (charPos >= typertext.length) {
-						if (aftertext === null) {
-							aftertext = typertext;
-						}
-						setTimeout(() => {
-							emt.html(aftertext);
-							emt.attr(
-								"style",
-								emt.attr("style").substring(0, emt.attr("style").length - 26)
-							);
-						}, 500);
-						clearInterval(id);
-						if (id === 0) {
-							clearInterval(1);
-						}
-						//clearInterval(dict[typertext])
-						return 0;
-					}
-					emt.append(typertext[charPos]);
-					charPos++;
-				}, speed);
-			}
+		<footer><i>Website</i> made by actiniumn404. This is not affiliated in any way with Microsoft Corporation. No copyright infringement is intended. <span id="crightmore" onclick="o('/copyright.txt')">[MORE]</span></footer>
 
-			async function init() {
-                $("#main").css("opacity", "1")
-				counter = 4;
-				for (let x = 0; x < $("#main > section *").length; x++) {
-					el = $($("#main > section *")[x]);
-					if (el.data("code") !== undefined) {
-						counter++;
-						typetitle(
-							el,
-							el.data("code"),
-							el.html(),
-							counter,
-							$("#main > section > *").length
-						);
-					}
-				}
-			}
-
-            setTimeout(() => {
-                $("#cursor").attr("src", "https://lmddgtfy.net/img/cursor-pointer.png")
-                setTimeout(() => {
-                    $("#cursor").css("top", "13px")
-                    $("#cursor").css("left", "calc(100vw - 92px)")
-                    setTimeout(() => {
-                        $("#cursor").css("top", "10px")
-                        $("#cursor").css("left", "calc(100vw - 95px)")
-                        setTimeout(() => {
-                            $("#cursor").remove()
-                        }, 200);
-                        init()
-                    }, 100);
-                }, 500);
-            }, 1500);
-		</script>
+		<script src="/site.js"></script>
 	</body>
 </html>
