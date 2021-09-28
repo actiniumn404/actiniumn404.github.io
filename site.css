@@ -1,74 +1,228 @@
-*{
-    --cyan:#04a0ae;
-}
-body{
-    transition:0.5s;
-    background-color: black;
-}
-h1{
-    color:var(--cyan);
-    font-size:72px;
-}
-h2{
-    color: orange;
-    font-size:36px;
-}
-a{
-    text-decoration: none;
-}
-nav>span>a {
-    text-decoration: none;
-    color: var(--cyan) !important;
-    font-weight: bolder;
-    font-size: 36px;
+* {
+  box-sizing: border-box;
 }
 
-.navbarlink {
-    width:0;
-    flex-basis: 100%;
-    text-align: center;
-    left: 0;
-    top: 60px;
-    /*width: 24%;*/
-    padding-top: 20px;
-    /*position: absolute;*/
-    height: 40px;
-    border: 1px solid black;
-    transition: 0.5s;
-    text-decoration: none;
-    background-color:rgb(43, 43, 43);
-    color:darkgray !important;
-    color: black;
-    z-index: 100000;
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: rgb(30, 30, 30);
+  color: #ccc;
+  font-family: "Open Sans", sans-serif;
 }
 
-.navbarlink:hover {
-    height: 70px;
-    transition: 0.5s;
-    background-color: #5c5c5c;
-    color: white !important;
+@font-face {
+  font-family: "codicon";
+  src: url("https://microsoft.github.io/vscode-codicons/dist/codicon.ttf?01396d1843cb318e1089a78e8dee6985") format("truetype");
 }
-nav>div{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    height:120px;
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+.codicon,
+.langicon {
+  display: block;
+  text-decoration: none;
+  text-rendering: auto;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
-p{
-    color:white;
-    font-size:20px;
-    width:50vw;
-    margin-left:25vw;
+
+.langicon {
+  font-family: "seti";
+  padding-right: 6px;
+  font-weight: bold;
+  width: fit-content;
+  width: -moz-fit-content;
+  display: inline-block;
 }
-button{
-    border:2px var(--cyan) solid;
-    color: var(--cyan);
-    font-weight: bolder;
-    font-size:20px;
-    background-color: transparent;
-    padding:10px;
-    outline:none;
+
+.codicon::after {
+  content: var(--id);
+	font-family: codicon;
 }
-button:hover{
-    opacity: 0.8;
+
+nav aside {
+  background-color: rgb(51, 51, 51);
+  width: 48px;
+  height: 100%;
+  float: left;
+}
+
+nav {
+  height: calc(100% - 27px);
+  width: fit-content;
+  width: -moz-fit-content;
+  float: left;
+}
+
+.navbarbutton {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.navbarbutton:hover {
+  color: rgb(255, 255, 255);
+}
+
+.navbarbutton.active {
+  color: rgb(255, 255, 255);
+}
+
+nav > div {
+  background-color: rgb(37, 37, 38);
+  width: 300px;
+  height: 100%;
+  float: right;
+}
+
+nav > div > div:not(#navexplorer){
+	padding:24px;
+	padding-top:10px;
+}
+
+.navtitle {
+  color: rgb(187, 187, 187);
+  font-size: 13px;
+  line-height: 35px;
+  padding-left: 24px;
+  text-transform: uppercase;
+}
+
+.file {
+  padding-left: 24px;
+  height: 22px;
+  font-size: 13px;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.file:hover {
+  background-color: #2a2d2e;
+}
+
+.file.active {
+  background-color: #37373d;
+}
+
+#main {
+  width: calc(100% - 348px);
+  float: right;
+  opacity: 0;
+  transition: 1s ease;
+  height: calc(100% - 27px);
+  padding: 20px;
+}
+
+#main *[data-code] {
+  transition: 1s ease;
+}
+
+/*#runlog {
+  background-color: #37373d;
+  padding: 10px;
+  width: 100px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}*/
+
+#runcode {
+  --id: "\eb2c";
+  font-weight: bold;
+  color: rgb(17, 187, 17);
+  width: fit-content;
+  width: -moz-fit-content;
+  cursor: pointer;
+	padding:5px 7px;
+	border: 2px solid rgb(17, 187, 17);
+	border-radius: 5px;
+}
+
+#runcode:hover {
+  filter: brightness(0.8);
+}
+
+@keyframes cursor {
+  from {
+    top: 30vh;
+    left: 30vw;
+  }
+
+  100% {
+    top: 105px;
+    left: 165px;
+  }
+}
+
+#cursor {
+  position: absolute;
+	top: 105px;
+	left: 165px;
+  animation: cursor 2s ease;
+}
+
+footer {
+  height: 27px;
+  width: 100%;
+  background-color: rgb(0, 122, 204);
+  position: absolute;
+  bottom: 0px;
+  padding: 5px;
+  font-size: 14px;
+  color: white;
+  line-height: 17px;
+  padding-left: 15px;
+  text-align: center;
+	overflow: auto;
+}
+
+@keyframes bigtext {
+  0% {
+    font-size: inherit;
+    color: rgb(255, 154, 196);
+  }
+
+  50% {
+    /*font-size: 15px;*/
+    color: rgb(255, 255, 142);
+  }
+
+  100% {
+    font-size: inherit;
+    color: rgb(255, 154, 196);
+  }
+}
+
+#crightmore {
+  animation: ease 1s bigtext infinite;
+  user-select: none;
+  cursor: pointer;
+}
+
+a {
+  color: #76aeff;
+  text-decoration: none;
+}
+
+#typewriterDuration{
+	margin-top: 10px;
+	width: 100%;
+	background: rgb(50 50 51);
+	text-align: center;
+	color: white;
+	padding: 10px;
+	font-size: 16px;
+	outline: none;
+	border: 0;
 }

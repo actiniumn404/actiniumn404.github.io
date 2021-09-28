@@ -1,0 +1,183 @@
+<style>
+  #main .project_content:hover>div.project_des {
+    top: 0px !important;
+    transition: 0.5s;
+  }
+
+  #main .project_content {
+    position: relative;
+  }
+
+  #main div.project_des {
+    transition: 0.5s;
+    top: -200vh;
+    display: block;
+    position: absolute;
+    width: 490px;
+    height: 300px;
+    opacity: 0.95;
+    color: white;
+    text-align: center;
+		padding:10px;
+  }
+
+  #main .project {
+    width: 476px;
+    float: left;
+		height:fit-content;
+		/* Whyyy firefox why? */
+		height:-moz-fit-content;
+    margin: 20px;
+  }
+
+  #main .project_preview {
+    border: 5px solid white;
+		box-shadow: 16px 16px 4px darkgrey, 32px 32px 8px #6f6f6f;
+  }
+
+  #main p {
+    color: white;
+    font-size: 18px;
+    margin: 0;
+    width: auto;
+  }
+
+  #main button {
+    border: 2px white solid;
+    color: white;
+    font-weight: bolder;
+    font-size: 18px;
+    background-color: transparent;
+    padding: 10px;
+    outline: none;
+    margin: 5px;
+  }
+
+  #main button:hover {
+    opacity: 0.8;
+  }
+
+  #main .project_preview {
+    width: 100%;
+    height: 290px !important;
+    object-fit: cover;
+  }
+
+  #main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+		text-align: center;
+  }
+
+  #main h1 {
+    font-size: revert;
+    color: white !important;
+  }
+	a{
+		color: lightgray !important;
+	}
+</style>
+<main>
+	<h1 style="display:inline-block;width:100%;height: fit-content;height:-moz-fit-content;" data-code="webpage.print('My Portfolio', template=gray_h1)">My Portfolio</h1>
+  <div class="project">
+    <div class="project_content" data-code="webpage.insert(variable.among_us)">
+      <img src="/images/Among_you.png" class="project_preview" width="100%">
+      <div class="project_des" style="background-color:red;">
+        <h1>Among You.py</h1>
+        <b>
+          <p>
+            Bored at home? What would you do? Me with my friend <a href="https://github.com/wwwthew" target="_blank">wwwthew</a> created a full up python version of Among Us (developed by InnerSloth.)
+          </p>
+        </b>
+        <a href="https://github.com/actiniumn404/Among-you" target="_blank">
+          <button>See code on Github</button>
+        </a>
+        <a href="/portfolio/amongyou" target="_blank">
+          <button>Learn More</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="project">
+    <div class="project_content" data-code="webpage.insert(variable.rickroll)">
+      <img src="/images/Rickroll_html.png" class="project_preview">
+      <div class="project_des" style="background-color:dodgerblue;">
+        <h1>Rickroll.html</h1>
+        <b>
+          <p>
+            Looking for a good April Fools Prank? Then Rickroll.html is for you. Rickroll.html is a html program that rickrolls you in a suprising way.
+          </p>
+        </b>
+        <a href="https://rickrollhtml.andrewchen51.repl.co/" target="_blank">
+          <button>Visit website</button>
+        </a>
+        <a href="/portfolio/rickrollhtml" target="_blank">
+          <button>Learn More</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="project">
+    <div class="project_content" data-code="webpage.insert(variable.happy_bday)">
+      <img src="/images/Happy_bday.jpeg" class="project_preview">
+      <div class="project_des" style="background-color:olivedrab;">
+        <h1>Happy Bithday.html</h1>
+        <b>
+          <p>
+            Happy Bithday.html is the perfect way to celebrate a birthday of a friend online. With confetti and a message in a gift you open, this is no doubt awesome.
+          </p>
+        </b>
+        <a href="https://happy-birthday.andrewchen51.repl.co/" target="_blank">
+          <button>Visit website</button>
+        </a>
+        <a href="https://github.com/actiniumn404/Happy-Birthday" target="_blank">
+          <button>View on Github</button>
+        </a>
+        <a href="/portfolio/happybirthday" target="_blank">
+          <button>Learn More</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="project">
+    <div class="project_content" data-code="webpage.insert(variable.jeopardy)">
+      <img src="/images/Jeopardy.jpeg" class="project_preview">
+      <div class="project_des" style="background-color:coral;">
+        <h1>Jeopardy Multiplayer</h1>
+        <b>
+          <p>
+            Jeopardy Multiplayer is a way to play a game of jeopardy without having to get into a meeting and screen sharing. This was a colab with by friend <a href="https://github.com/wwwthew" target="_blank">wwwthew</a>.
+          </p>
+        </b>
+        <a href="https://jeopardy.andrewchen51.repl.co/" target="_blank">
+          <button>Visit website</button>
+        </a>
+        <a href="/portfolio/jeopardy" target="_blank">
+          <button>Learn More</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="project">
+    <div class="project_content" data-code="webpage.insert(variable.amc8trainer)">
+      <img src="/images/AMC8.png" class="project_preview">
+      <div class="project_des" style="background-color:teal;">
+        <h1>AMC8 Problem Generator</h1>
+        <b>
+          <p>
+            The AMC8 Problem Generator is a colaboration between four people. It automaticly generates past AMC8 problems and gives you two tries to try and find the answer.
+          </p>
+        </b>
+        <a href="https://amc8.toad39.dev/" target="_blank">
+          <button>Visit website</button>
+        </a>
+        <a href="/portfolio/amc8" target="_blank">
+          <button>Learn More</button>
+        </a>
+      </div>
+    </div>
+  </div>
+	<!-- TODO: ADD BLOG PORTAL, GAMEBOT, AOPS BLOG CSS, -->
+</main>
