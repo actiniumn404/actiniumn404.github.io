@@ -1,81 +1,37 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="/images/favicon.png">
-  <title>The Website of Andrew Chen</title>
-  <style id="ccss"></style>
-	<link href="/site.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="assets/favicon.png">
+		<title>The Website of Andrew Chen</title>
+		<style id="ccss"></style>
+		<link href="site.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
 
-<body>
-  <nav>
-    <aside>
-			<a href="https://github.com/actiniumn404/actiniumn404.github.io" target="_blank" id="navgithub">
-				<button class="navbarbutton">
-					<span class="codicon" style="--id: '\ea84'"></span>
-				</button>
-			</a>
-
-      <button class="navbarbutton" onclick="opennav('navexplorer', this)" id="navfiles">
-        <span class="codicon" style="--id: '\eaf0'"></span>
-      </button>
-
-			<button class="navbarbutton active" onclick="opennav('runlog', this)" id="navdebug">
-        <span class="codicon" style="--id: '\eb91'"></span>
-      </button>
-
-    </aside>
-    <div>
-      <div id="navexplorer" style="display: none;">
-        <span class="navtitle">File System</span>
-
-        <div class="file active">
-          <span class="langicon" style="color: #e37933; --id: '\E046'">&lt;&nbsp;&gt;</span>
-          <span>homepage.html</span>
-        </div>
-
-        <div class="file">
-          <span class="langicon" style="color: #e37933; --id: '\E046'">&lt;&nbsp;&gt;</span>
-          <span>about.html</span>
-        </div>
-
-        <div class="file">
-          <span class="langicon" style="color: #e37933; --id: '\E046'">&lt;&nbsp;&gt;</span>
-          <span>copyright.html</span>
-        </div>
-
-
-        <div class="file">
-          <span class="langicon" style="color: #e37933; --id: '\E046'">&lt;&nbsp;&gt;</span>
-          <span>portfolio.html</span>
-        </div>
-
-      </div>
-			<div id="runlog">
-				<span class="navtitle" style="padding: 0;">Debug/Run code</span><br>
-				<input type="checkbox" id="animationChoice" for="animationChoice" checked onchange="changedp()"><label for="animationChoice">Use animation</label>
-				<br><br>
-				<div>
-					<span class="codicon" id="runcode" onclick="init()" style="line-height:20px">Run code&nbsp;</span><br>
-					<label for="typewriterDuration">Number of <a href="https://en.wikipedia.org/wiki/Millisecond" target="_blank">milliseconds</a> the typewriter animation takes</label>
-					<input type="number" value="3000" min="100" id="typewriterDuration" max="40000" name="typewriterDuration">
-				</div>
+	<body>
+		<header id="intro">
+			<div>
+				<h1 class="bold">I am <span style="color:rgb(235, 199, 0);">Actiniumn404</span></h1>
+				<h2 class="bold">A Front-end Web Developer</h2>
 			</div>
-    </div>
-  </nav>
-  <img src="/images/cursor.png" id="cursor" width="15px">
-  <main id="main">
-    Nothing here
-  </main>
-
-  <footer><i>Website</i> made by actiniumn404. This is not affiliated in any way with Microsoft Corporation. No copyright infringement is intended. <span id="crightmore" onclick="o('copyright.html')">[MORE]</span></footer>
-
-  <script src="/site.js"></script>
-  <script id="cjs"></script>
-</body>
+			<img src="https://avatars.githubusercontent.com/u/83673744">
+		</header>
+		<section id="aboutme">
+			<h1 class="bold">About Me</h1>
+			<p>
+				Hi! I'm Andrew. I'm a front-end web developer who enjoys coding. I have been coding for a 2-3 years by now, so I would say I have mastered the languages of HTML, CSS, JavaScript and Python.
+			</p>
+			<a href="/about.html">More about me! &gt;</a>
+		</section>
+		<section id="projects">
+			<h1 class="bold">Featured Project</h1>
+			<a href="/about.html">See all projects &gt;</a>
+		</section>
+		<script src="js/site.js" defer></script>
+		<script src="js/main.js" defer></script>
+	</body>
 
 </html>
