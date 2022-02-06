@@ -24,6 +24,7 @@ body{
 	column-gap: 50px;
 	flex-wrap: wrap-reverse;
 	align-content: center;
+	row-gap: 20px;
 }
 
 #intro img{
@@ -194,8 +195,8 @@ table a{
 		width:50vw;
 	}
 }
-@media only screen and (max-width: 500px){
-	img[src="https://avatars.githubusercontent.com/u/83673744"]{
+@media only screen and (max-width: 600px){
+	img[src="https://avatars.githubusercontent.com/u/83673744"]:not(.spinnercont > img[src="https://avatars.githubusercontent.com/u/83673744"]){
 		width:90vw;
 	}
 	.project, #aboutme p{
@@ -204,4 +205,77 @@ table a{
 	.skill{
 		width:90vw;
 	}
+	.blog_post{
+		width:90vw !important;
+	}
+}
+
+.blog_post > h1{
+	text-align: left !important;
+	display: block;
+	font-size: 48px !important;
+	margin: 0;
+}
+.blog_post > h2{
+	margin: 0;
+}
+.blog_post_content{
+	margin-top:10px;
+}
+.blog_post{
+	padding: 20px;
+	border: 2px solid gray;
+	width: 50%;
+	margin-bottom: 20px;
+}
+#blog_cont{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.spinner{
+	border: 10px solid;
+    border-radius: 100px;
+    border-left-color: blue;
+    border-right-color: red;
+    border-top-color: green;
+    border-bottom-color: yellow;
+	animation: 2s spin infinite linear;
+}
+
+@keyframes spin{
+	from{transform:rotate(0deg)}
+	to{transform:rotate(360deg)}
+}
+.spinnercont{
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	border: 2px solid gray;
+	width:fit-content;
+	width:-moz-fit-content;
+	padding: 10px;
+	align-items: center;
+	margin: auto;
+	row-gap: 20px;
+}
+
+.blog_post img{
+	max-width: 100%;
+}
+
+.blog_post_content pre{
+	color: white;
+	padding: 15px 10px;
+	background-color: #141414;
+}
+
+.blog_post_content code:not(pre > code){
+	color: magenta;
+}
+.blog_post_content blockquote{
+	border-left: 10px solid darkgray;
+	padding:5px 10px;
+	margin-left:10px;
 }
