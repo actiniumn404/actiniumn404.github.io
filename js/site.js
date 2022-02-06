@@ -81,3 +81,22 @@ function create_project_html(name){
 </div>
 	`
 }
+metadata = `
+<!-- Primary Meta Tags -->
+<title>Actiniumn404</title>
+<meta name="title" content="Actiniumn404">
+<meta name="description" content="Hi! I'm Andrew. I'm an overzealous web developer and Python programmer who has made some really cool websites. ">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://metatags.io/">
+<meta property="og:title" content="Actiniumn404">
+<meta property="og:description" content="Hi! I'm Andrew. I'm an overzealous web developer and Python programmer who has made some really cool websites. ">
+<meta property="og:image" content="assets/meta_bg.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://metatags.io/">
+<meta property="twitter:title" content="Actiniumn404">
+<meta property="twitter:description" content="Hi! I'm Andrew. I'm an overzealous web developer and Python programmer who has made some really cool websites. ">
+<meta property="twitter:image" content="assets/meta_bg.png">`
